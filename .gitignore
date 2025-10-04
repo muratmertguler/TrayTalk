@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+
+# Virtual environments
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+
+# UV package manager
+.uv/
