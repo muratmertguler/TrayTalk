@@ -4,4 +4,16 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.118.0",
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.30",
+    "langchain-ollama>=0.3.10",
+    "langchain-openai>=0.3.34",
+    "pymongo>=4.15.2",
+    "qdrant-client>=1.15.1",
+    "torch>=2.8.0",
+    "transformers>=4.57.0",
+    "uvicorn>=0.37.0",
+    "vllm>=0.11.0",
+]
