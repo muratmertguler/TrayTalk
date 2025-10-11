@@ -1,6 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 class User(BaseModel):
     id: int = Field(..., description="Unique identifier for the user")
@@ -9,7 +9,7 @@ class User(BaseModel):
 
 class Message(BaseModel):
     user_id : int = Field(..., description="ID of the user who sent the message")
-    message_id =    Field(..., description="Unique identifier for the message")
+    message_id : Optional[str] =  Field(..., description="Unique identifier for the message")
     content : str = Field(..., description="Content of the message")
     system_prompt : str | None = Field(default=None, description="System prompt associated with the message, if any")
     timestamp : datetime =  Field(default_factory=datetime.now, description="Timestamp of when the message was sent")

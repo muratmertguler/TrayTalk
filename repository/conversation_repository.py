@@ -35,7 +35,6 @@ class ConversationDocument(Document):
             timestamp=conversation.timestamp
         )
 
-
 class ConversationRepository(IConversationRepository):
     async def save_conversation(self, conversation: Conversation):
         conversation_doc = ConversationDocument.from_domain(conversation)
