@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict
+from typing import List, Dict, Tuple, Optional
 from langchain_community.chat_message_histories import ChatMessageHistory
 from domain.models import Conversation
 
@@ -8,6 +8,14 @@ class ILLMClient(ABC):
     def response_generation(self, query: str, session_id: str = "default") -> str:
         pass
 
+class IRerankerClient(ABC):
+    @abstractmethod
+    def score(self, query: str, doc: str, instruction: Optional[str] = None) -> float:
+        pass
+
+    @abstractmethod
+    def score_batch(self, pairs: List[Tuple[str, str]], instruction: Optional[str] = None, batch_size: int = 8) -> List[float]:
+        pass
 
 class IMemoryManager(ABC):
     @abstractmethod
