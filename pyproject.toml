@@ -6,11 +6,13 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "beanie>=2.0.0",
+    "dependency-injector>=4.48.2",
     "fastapi[standard]>=0.118.0",
     "langchain>=0.3.27",
     "langchain-community>=0.3.30",
     "langchain-ollama>=0.3.10",
     "langchain-openai>=0.3.34",
+    "motor>=3.7.1",
     "pydantic>=2.11.10",
     "pymongo>=4.15.2",
     "qdrant-client>=1.15.1",
