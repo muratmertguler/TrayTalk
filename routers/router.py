@@ -6,7 +6,7 @@ from domain.IReranker import IReranker
 from services.VectorDBRetrievalService import VectorDBManagerService
 from routers.schemas import *
 from services.RerankerService import RerankerService
-from infrastructure.dependencies import *
+from routers.dependencies import *
 from typing import List
 
 message_router = APIRouter(
@@ -33,7 +33,7 @@ async def health_check() -> dict:
 @message_router.post("/user/sendMessage", response_model=dict)
 async def send_message(
     request: UserMessageRequest,
-    service: IUserMessageHandler = Depends(get_user_message_handlerr_service)
+    service: IUserMessageHandler = Depends(get_user_message_handler_service)
     ):
 
     return await service.message_handler(request.user_id, 
@@ -45,7 +45,7 @@ async def send_message(
 @message_router.post("/llm/sendMessage", response_model=dict)
 async def response_llm_message_handler(
     request: LLMMessageResponse,
-    service: ILLMMessageHandler = Depends(get_llm_message_handlerr_service)
+    service: ILLMMessageHandler = Depends(get_llm_message_handler_service)
     ): 
     
     return await service.message_handler(request.model_dump())

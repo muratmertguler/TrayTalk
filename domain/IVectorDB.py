@@ -30,7 +30,7 @@ class IVectorDB(ABC):
         """
 
     @abstractmethod
-    async def create_collection(self, recreate: bool) -> None:
+    async def create_collection(self) -> None:
         pass
 
     @abstractmethod

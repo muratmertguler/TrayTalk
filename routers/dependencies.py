@@ -11,8 +11,8 @@ from config import ConfigEmbedder, ConfigQdrantDB, ConfigReranker
 
 
 __all__ = [
-    "get_user_message_handlerr_service",
-    "get_llm_message_handlerr_service",
+    "get_user_message_handler_service",
+    "get_llm_message_handler_service",
     "get_vector_manager_service",
     "get_reranker_service",
     "get_embedder",
@@ -22,12 +22,12 @@ __all__ = [
 
 
 @lru_cache()
-def get_user_message_handlerr_service() -> UserMessageHandlerService:
+def get_user_message_handler_service() -> UserMessageHandlerService:
     return UserMessageHandlerService()
 
 
 @lru_cache()
-def get_llm_message_handlerr_service() -> LLMMessageHandlerService:
+def get_llm_message_handler_service() -> LLMMessageHandlerService:
     return LLMMessageHandlerService()
 
 

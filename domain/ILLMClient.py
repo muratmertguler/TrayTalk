@@ -28,7 +28,7 @@ class  ILLMClient:
 
 
     @abstractmethod
-    async def generate_text_stream(self, prompt: str):
+    async def generate_text_stream(self, prompt: str) -> str:
         """
         Generates text based on the given prompt as a stream.
 

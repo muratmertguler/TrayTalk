@@ -65,6 +65,6 @@ class BatchUpsertRequest(BaseModel):
 
 class UpsertRequest(BaseModel):
     content: str = Field(description="The message content from the docs")
-    tags  : str = Field(description="Tags")
+    tags  : List[str] = Field(description="Tags")
     lang  : Optional[str] = Field("en", description="langue") 
     created_at: Optional[datetime] = Field(default_factory=datetime.now())

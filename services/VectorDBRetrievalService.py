@@ -32,10 +32,10 @@ class VectorDBManagerService:
 
     async def batch_upsert(self, list_text: List[dict]) -> List[str]:
         data = [text.dict() for text in list_text]
-        
+    
         texts = [item["content"] for item in data]
         
-        embeddings = await self.embedder.embed_texts(texts)
+        embeddings = await self.embedder.embed_text(texts)
         
         points = []
         ids = []
